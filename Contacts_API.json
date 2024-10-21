@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "e17e680d-79ed-4b37-b081-8a0781413879",
+		"name": "ContactsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12417036"
+	},
+	"item": [
+		{
+			"name": "GET API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Tokenid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Baseurl}}/contacts/{{contact_id}}",
+					"host": [
+						"{{Baseurl}}"
+					],
+					"path": [
+						"contacts",
+						"{{contact_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"const contactId = res._id;\r",
+							"\r",
+							"const fname = res.firstName;\r",
+							"\r",
+							"console.log(\"user id is \" + contactId);\r",
+							"\r",
+							"console.log(\"firstname is \" + fname);\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.variables.set(\"contact_id\", contactId);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Tokenid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"firstName\": \"{{$randomFirstName}}\",\r\n        \"lastName\": \"{{$randomLastName}}\",\r\n        \"email\": \"{{$randomEmail}}\",\r\n        \"country\": \"india\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Baseurl}}/contacts",
+					"host": [
+						"{{Baseurl}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Tokenid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n        \"lastName\": \"{{$randomLastName}}\",\r\n        \"email\": \"{{$randomEmail}}\",\r\n        \"country\": \"india\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Baseurl}}/contacts/{{contact_id}}",
+					"host": [
+						"{{Baseurl}}"
+					],
+					"path": [
+						"contacts",
+						"{{contact_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Tokenid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Baseurl}}/contacts/{{contact_id}}",
+					"host": [
+						"{{Baseurl}}"
+					],
+					"path": [
+						"contacts",
+						"{{contact_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch API",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Tokenid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"Vijay@gmail.com\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Baseurl}}/contacts/6706b4012312d80013efb684",
+					"host": [
+						"{{Baseurl}}"
+					],
+					"path": [
+						"contacts",
+						"6706b4012312d80013efb684"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Head API",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Tokenid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Baseurl}}/contacts",
+					"host": [
+						"{{Baseurl}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Options API",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Tokenid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{Baseurl}}/contacts",
+					"host": [
+						"{{Baseurl}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"if(pm.request.method != 'POST')\r",
+					"{\r",
+					"   pm.test(\"Status code is 200\", function () {\r",
+					"        pm.response.to.have.status(200);\r",
+					"   });\r",
+					"}\r",
+					"else\r",
+					"{\r",
+					"     pm.test(\"Status code is 201\", function () {\r",
+					"        pm.response.to.have.status(201);\r",
+					"   }); \r",
+					"}\r",
+					"\r",
+					"pm.test(\"Response time is less than 5000ms\", function () {\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+					"});\r",
+					"\r",
+					""
+				]
+			}
+		}
+	]
+}

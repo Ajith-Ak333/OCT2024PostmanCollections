@@ -1,0 +1,21 @@
+{
+	"id": "82b69bd1-b287-4176-9203-93eafb69e473",
+	"name": "Contacts Env",
+	"values": [
+		{
+			"key": "Baseurl",
+			"value": "https://thinking-tester-contact-list.herokuapp.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Tokenid",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzA2YjM0YjIzMTJkODAwMTNlZmI2ODAiLCJpYXQiOjE3Mjg0OTM0MTZ9.mdCGoFZOQZLxHR6wuCSs0xYQE__HfQ_JCOSoQzbs08I",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-10-18T05:06:13.267Z",
+	"_postman_exported_using": "Postman/11.17.1"
+}
